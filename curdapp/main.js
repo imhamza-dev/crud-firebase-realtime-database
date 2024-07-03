@@ -1,7 +1,7 @@
 import './style.css';
 
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/database';
+import { getDatabase } from 'firebase/database';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyDarWHUzlTBfaWoy0j18S0waQUOZpkuflE',
@@ -16,4 +16,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-const notify = documentSelector('.notify');
+const notify = document.querySelector('.notify');
+
+const saveData = () => {
+	const name = document.querySelector('#name').value;
+	const email = document.querySelector('#email').value;
+
+	if (!name || !email) {
+		notify.innerText = 'Plz fill form';
+	}
+};
+
+const saveDataBtn = document.querySelector('#save');
+
+saveDataBtn.addEventListener('click', saveData);
