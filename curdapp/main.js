@@ -1,7 +1,7 @@
 import './style.css';
 
 import { initializeApp } from 'firebase/app';
-import { getDatabase } from 'firebase/database';
+import { getDatabase, set } from 'firebase/database';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyDarWHUzlTBfaWoy0j18S0waQUOZpkuflE',
